@@ -95,6 +95,13 @@ tags:
       Manage withdrawal accounts
 schemes:
   - https
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: X-Auth-Token
+security:
+  - ApiKeyAuth: []
 host: devapi.currencycloud.com
 basePath: /v2
 consumes:
@@ -108,6 +115,7 @@ paths:
         - Authenticate
       x-api-group: manage
       summary: Login
+      security: []
       description: >-
         The Currencycloud API authentication and authorization endpoint.
 
